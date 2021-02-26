@@ -1,0 +1,29 @@
+{extend name="public/base_new" /}
+{block name="body"}
+<div class="main second_page">
+    {include file="public:header_new" /}
+    <div class="main_show" style="overflow: auto;padding: 20px 5%;margin-bottom: 20px">
+        <ul style="list-style: none;">
+        {yzn:content action="lists" catid="$catid" order="listorder ASC" return="data"}
+        {volist name="data" id="vo"}
+        <li class="news-li{if condition="$vo['posid'] neq '0'"} first_news{/if}">
+            {if condition="$vo['posid'] neq '0'"}
+            <div class="news-img"><a href="{$vo['url']}"><img src="{$vo['thumb']}" style="width: 100%;height:310px;"></a></div>
+            {/if}
+            <div class="news-pp">
+                <a href="{$vo['url']}">
+                    <strong>{$vo['title']}</strong>
+                    <p>{$vo['description']|strip_tags|str_cut=70}</p>
+                    <small>{$vo['inputtime']|date="Y.m.d",###}</small><span>详情</span>
+                </a>
+            </div>
+        </li>
+        {/volist}
+        {/yzn:content}
+        </ul>
+    </div>
+</div>
+<div class="copy_div" style="bottom: 30px;left: 5%">
+    &copy; 2001-2019 xxxxxxxx.All rights reserved
+</div>
+{/block}

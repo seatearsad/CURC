@@ -1,0 +1,10 @@
+.idea
+composer.lock
+*.log
+thinkphp
+runtime
+Data
+html
+uploads
+apps/database.php
+favicon.ico

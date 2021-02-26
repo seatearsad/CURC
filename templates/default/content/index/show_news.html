@@ -1,0 +1,18 @@
+{extend name="public/base_new" /}
+{block name="body"}
+<div class="main second_page">
+    <div class="main_back"></div>
+    {include file="public:header_new" /}
+    <div class="main_show">
+        <div class="show_tag active">
+            <h1>{$title}</h1>
+            <span>
+                {$content}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="copy_div" style="bottom: 30px;left: 5%">
+    &copy; 2001-2019 xxxxxxxx.All rights reserved
+</div>
+{/block}
