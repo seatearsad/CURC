@@ -356,7 +356,8 @@ body{
     font-size: 14px;
     line-height: 1.6;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding-right: 20px;
     margin-left: 20px;
 }
