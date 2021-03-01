@@ -344,14 +344,21 @@ body{
 .main_show h1{
     text-align: left;
     margin-bottom: 30px;
+    margin-left: 20px;
+}
+.main_show div{
+    display: inline-block;
+    overflow: hidden;
+    width: 70%;
 }
 .main_show span{
     display: inline-block;
     font-size: 14px;
     line-height: 1.6;
-    width: 70%;
+    width: 100%;
     overflow: scroll;
     padding-right: 20px;
+    margin-left: 20px;
 }
 .main_show .show_tag{
     position: absolute;

@@ -11,7 +11,9 @@ $(function () {
 
     $('.main').css("height", height);
     $('.main_show').css("height", height - footerHeight - headerHeight);
-    $('.main_show').children('.show_tag').children('span').css("height", height - footerHeight - headerHeight - 100);
+    $('.main_show').children('.show_tag').children('div').css("height", height - footerHeight - headerHeight - 80);
+    $('.main_show').children('.show_tag').children('div').children('span').css("height", height - footerHeight - headerHeight - 100);
+    // $('.main_show').children('.show_tag').children('span').css("height", height - footerHeight - headerHeight - 100);
 
     //$('.bottom_second_div').find("li").click(changeMemo);
     $('.nav_url').children('li.active').children('dl').children("dd").click(changeMemo);
