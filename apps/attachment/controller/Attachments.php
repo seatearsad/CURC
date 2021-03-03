@@ -39,7 +39,6 @@ class Attachments extends Adminbase
                 $file_input_name = 'upfile';
         }
         $file = $this->request->file($file_input_name);
-
         // 移动到框架应用根目录/uploads/ 目录下
         $info = $file->move(config('upload_path') . $dir);
         if ($info) {

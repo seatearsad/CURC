@@ -10,7 +10,7 @@
                 <a href="{$vo['url']}">{$vo['catname']}</a>
                 {if condition="$vo['catdir'] neq 'News'"}
                 <dl style="display: none;">
-                    {yzn:content action="lists" catid="$vo['catid']"  num="4" order="listorder ASC" return="data_2" page="$page"}
+                    {yzn:content action="lists" catid="$vo['catid']" num="40" order="listorder ASC" return="data_2" page="$page"}
                     {volist name="data_2" id="voo"}
                     <dd>{$voo['title']}</dd>
                     {/volist}

@@ -1552,13 +1552,13 @@
     
             // 如果有mimetype, 但是文件名里面没有找出后缀规律
             if ( !ext && this.type ) {
-                ext = /\/(jpg|jpeg|png|gif|bmp)$/i.exec( this.type ) ?
+                ext = /\/(jpg|jpeg|png|gif|bmp|pdf|zip)$/i.exec( this.type ) ?
                         RegExp.$1.toLowerCase() : '';
                 this.name += '.' + ext;
             }
     
             // 如果没有指定mimetype, 但是知道文件后缀。
-            if ( !this.type &&  ~'jpg,jpeg,png,gif,bmp'.indexOf( ext ) ) {
+            if ( !this.type &&  ~'jpg,jpeg,png,gif,bmp,pdf,zip'.indexOf( ext ) ) {
                 this.type = 'image/' + (ext === 'jpg' ? 'jpeg' : ext);
             }
     

@@ -63,7 +63,7 @@ class Ueditor extends Attachments
         'filePathFormat' => '',
         'fileUrlPrefix' => '',
         'fileMaxSize' => 0,
-        'fileAllowFiles' => array(".flv", ".swf"),
+        'fileAllowFiles' => array(".flv", ".swf",".pdf",".zip"),
         /* 列出指定目录下的图片 */
         'imageManagerActionName' => 'listimage',
         'imageManagerListPath' => '',
@@ -103,6 +103,7 @@ class Ueditor extends Attachments
                 break;
             //上传附件
             case 'uploadfile':
+                return $this->saveFile('file', 'ueditor');
                 break;
             //列出图片
             case 'listimage':
