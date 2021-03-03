@@ -174,7 +174,8 @@ class Base extends Model
         //对数据进行入库前的处理 END
         $systeminfo = $inputinfo['system']; //主表
         $modelinfo = $inputinfo['model']; //附表
-        if ($rs = $this->allowField(true)->save($systeminfo, ['id' => $this->id])) {
+        $rs = $this->allowField(true)->save($systeminfo, ['id' => $this->id]);
+        if ($rs !== false) {
             if (false === Db::name($this->name . '_data')->update($modelinfo)) {
                 //删除已添加的主表内容
                 $this->delete($data['id']);
