@@ -54,7 +54,7 @@ $(function () {
         $('.main_show').children('.memo').each(function () {
             if($(this).index() == initNum){
                 $('.show_tag').children('h1').html($(this).children('.memo_title').html());
-                $('.show_tag').children('span').html($(this).children('.memo_content').html());
+                $('.show_tag div').children('span').html($(this).children('.memo_content').html());
             }
             $('.main_show').scrollTop(0);
         });
@@ -76,7 +76,7 @@ function changeMemo() {
             //$(this).addClass("active");
             //alert($(this).children('.memo_content').html());
             $('.show_tag').children('h1').html($(this).children('.memo_title').html());
-            $('.show_tag').children('span').html($(this).children('.memo_content').html());
+            $('.show_tag div').children('span').html($(this).children('.memo_content').html());
         }
         $('.main_show').scrollTop(0);
     });
