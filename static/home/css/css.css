@@ -235,6 +235,16 @@ body{
     padding-top: 50px;
     font-size: 66px;
     font-weight: bold;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+}
+.second_txt{
+    background-image: url("../images/index_page_2.jpg");
+    background-position: left center;
+}
+.third_txt{
+    background-image: url("../images/index_page_3.jpg");
+    background-position: right center;
 }
 .third_txt{
     /*padding-left: 50%;*/

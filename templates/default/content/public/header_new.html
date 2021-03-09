@@ -11,9 +11,11 @@
                 {if condition="$vo['catdir'] neq 'News'"}
                 <dl style="display: none;">
                     {yzn:content action="lists" catid="$vo['catid']" num="40" order="listorder ASC" return="data_2" page="$page"}
+                    {if condition="count($data_2) gt 1"}
                     {volist name="data_2" id="voo"}
                     <dd>{$voo['title']}</dd>
                     {/volist}
+                    {/if}
                     {/yzn:content}
                 </dl>
                 {/if}
