@@ -43,13 +43,16 @@ class Category extends Model
         $data['setting'] = serialize($data['setting']);
 
         //数据验证
-        $validate = Loader::validate('category');
+        $validate = Loader::validate('Category');
 
         if ($data['type'] == 2) {
             $add_type = 'wadd';
         } else {
             $add_type = 'add';
         }
+
+        var_dump($data);die();
+        
         if (!$validate->scene($add_type)->check($data)) {
             $this->error = $validate->getError();
             return false;
