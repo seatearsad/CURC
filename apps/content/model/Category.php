@@ -36,7 +36,9 @@ class Category extends Model
         $data['setting'] = $post['setting'];
         //栏目拼音
         $catname = iconv('utf-8', 'gbk', $data['catname']);
-        $letters = gbk_to_pinyin($catname);
+        //在Linux下不能使用
+        //$letters = gbk_to_pinyin($catname);
+        $letters = "";
         $data['letter'] = strtolower(implode('', $letters));
 
         //序列化setting数据
@@ -94,7 +96,9 @@ class Category extends Model
         $data['setting'] = $post['setting'];
         //栏目拼音
         $catname = iconv('utf-8', 'gbk', $data['catname']);
-        $letters = gbk_to_pinyin($catname);
+        //在Linux下不能使用
+        //$letters = gbk_to_pinyin($catname);
+        $letters = "";
         $data['letter'] = strtolower(implode('', $letters));
 
         //序列化setting数据
