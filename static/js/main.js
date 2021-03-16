@@ -50,15 +50,31 @@ $(function () {
         if (initNum > $('.main_show').children('.memo').length - 1) {
             initNum = 0;
         }
-
         $('.main_show').children('.memo').each(function () {
             if($(this).index() == initNum){
                 $('.show_tag').children('h1').html($(this).children('.memo_title').html());
                 $('.show_tag div').children('span').html($(this).children('.memo_content').html());
             }
-            $('.main_show').scrollTop(0);
         });
     }
+
+    $('.content_down').hide();
+
+    var nScrollHeight = 0; //滚动距离总长(注意不是滚动条的长度)
+    var nScrollTop = 0;   //滚动到的当前位置
+    var nDivHight = $('.main_show .show_tag div').children('span').height();
+
+    $('.main_show .show_tag div').children('span').scroll(function () {
+        nScrollHeight = $(this)[0].scrollHeight;
+        nScrollTop = $(this)[0].scrollTop;
+        //alert(nScrollHeight);
+        if(nScrollTop + nDivHight >= nScrollHeight)
+            $('.content_down').hide();
+        else
+            $('.content_down').show();
+    });
+
+    $('.main_show .show_tag div').children('span').scrollTop(1);
 });
 
 function changeMemo() {
@@ -78,7 +94,7 @@ function changeMemo() {
             $('.show_tag').children('h1').html($(this).children('.memo_title').html());
             $('.show_tag div').children('span').html($(this).children('.memo_content').html());
         }
-        $('.main_show').scrollTop(0);
+        $('.main_show .show_tag div').children('span').scrollTop(1);
     });
 }
 
