@@ -97,8 +97,7 @@ class Category extends Model
         //栏目拼音
         $catname = iconv('utf-8', 'gbk', $data['catname']);
         //在Linux下不能使用
-        //$letters = gbk_to_pinyin($catname);
-        $letters = "";
+        $letters = gbk_to_pinyin($catname);
         $data['letter'] = strtolower(implode('', $letters));
 
         //序列化setting数据

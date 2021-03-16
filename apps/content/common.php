@@ -9,7 +9,7 @@
 // | Author: 御宅男 <530765310@qq.com>
 // +----------------------------------------------------------------------
 // 内容管理函数
-define('CODETABLEDIR', APP_PATH . 'Content/Data/');
+define('CODETABLEDIR', APP_PATH . 'content/Data/');
 /**
  * gbk转拼音
  */
@@ -20,6 +20,7 @@ function gbk_to_pinyin($txt)
     $pyarr = array();
     $py = array();
     $filename = CODETABLEDIR . 'gb-pinyin.table';
+
     $fp = fopen($filename, 'r');
     while (!feof($fp)) {
         $p = explode("-", fgets($fp, 32));
