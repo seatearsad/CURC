@@ -30,16 +30,15 @@ class Category extends Model
             return false;
         }
         $data = $post['info'];
-        var_dump($data);
         //栏目类型
         $data['type'] = (int) $post['type'];
         //栏目设置
         $data['setting'] = $post['setting'];
         //栏目拼音
         $catname = iconv('utf-8', 'gbk', $data['catname']);
-        var_dump($catname);
-        $letters = gbk_to_pinyin($catname);
-        var_dump($letters);die();
+        //在Linux下不能使用
+        //$letters = gbk_to_pinyin($catname);
+        $letters = "";
         $data['letter'] = strtolower(implode('', $letters));
 
         //序列化setting数据
@@ -97,7 +96,9 @@ class Category extends Model
         $data['setting'] = $post['setting'];
         //栏目拼音
         $catname = iconv('utf-8', 'gbk', $data['catname']);
-        $letters = gbk_to_pinyin($catname);
+        //在Linux下不能使用
+        //$letters = gbk_to_pinyin($catname);
+        $letters = "";
         $data['letter'] = strtolower(implode('', $letters));
 
         //序列化setting数据
