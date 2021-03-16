@@ -102,7 +102,7 @@ class Category extends Adminbase
             $Category = Loader::model("content/Category");
 
             $catid = $Category->addCategory(Request::instance()->post());
-            var_dump($catid);die();
+            var_dump(Request::instance()->post());die();
             if ($catid) {
                 $this->success("添加成功！", Url::build("Category/index"));
             } else {
