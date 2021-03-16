@@ -43,7 +43,7 @@ class Category extends Model
         $data['setting'] = serialize($data['setting']);
 
         //数据验证
-        $validate = Loader::validate('Category');
+        $validate = Loader::validate('category');
 
         if ($data['type'] == 2) {
             $add_type = 'wadd';
