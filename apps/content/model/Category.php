@@ -25,7 +25,6 @@ class Category extends Model
     //新增栏目
     public function addCategory($post)
     {
-        var_dump("fdsa");die();
         if (empty($post)) {
             $this->error = '添加栏目数据不能为空！';
             return false;
@@ -42,7 +41,7 @@ class Category extends Model
 
         //序列化setting数据
         $data['setting'] = serialize($data['setting']);
-
+        var_dump($data);die();
         //数据验证
         $validate = Loader::validate('Category');
 
@@ -52,7 +51,7 @@ class Category extends Model
             $add_type = 'add';
         }
 
-        var_dump($data);die();
+
 
         if (!$validate->scene($add_type)->check($data)) {
             $this->error = $validate->getError();
