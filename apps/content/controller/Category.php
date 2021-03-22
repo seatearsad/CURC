@@ -283,6 +283,7 @@ class Category extends Adminbase
     public function public_cache()
     {
         $this->repair();
+        var_dump("cache");die();
         $this->cache();
         $this->success("更新缓存成功！", Url::build("category/index"));
     }

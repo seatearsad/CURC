@@ -75,6 +75,10 @@ $(function () {
     });
 
     $('.main_show .show_tag div').children('span').scrollTop(1);
+
+    $('.language_label').click(function () {
+        window.location.href = "/home/index/lists/catid/15";
+    });
 });
 
 function changeMemo() {
