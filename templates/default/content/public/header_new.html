@@ -3,7 +3,7 @@
     <div class="header_div">
         <div class="white_line"></div>
         <ul class="nav_url">
-            <li class="{empty name="catid"} active{/empty}"><a href="/">主页</a></li>
+            <li class="{empty name="catid"} active{/empty}{if condition="$catid eq 15"}active{/if}"><a href="/">主页</a></li>
             {yzn:content action="category" catid="0" cache="3600" num="6" order="listorder ASC"  return="data"}
             {volist name="data" id="vo"}
             <li class="{if condition="in_array($catid,explode(',',$vo[ 'arrchildid'])) "} active{/if}">
