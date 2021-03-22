@@ -105,6 +105,7 @@ body{
     background-position: center right;
     background-size: auto 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .app_desc{
     height: 560px;
