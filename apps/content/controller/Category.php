@@ -283,7 +283,6 @@ class Category extends Adminbase
     public function public_cache()
     {
         $this->repair();
-        var_dump("123");die();
         $this->cache();
         $this->success("更新缓存成功！", Url::build("category/index"));
     }
@@ -313,7 +312,7 @@ class Category extends Adminbase
                 if ($categorys[$catid]['arrparentid'] != $arrparentid || $categorys[$catid]['arrchildid'] != $arrchildid || $categorys[$catid]['child'] != $child) {
                     Db::name("category")->where(array('catid' => $catid))->update(array('arrparentid' => $arrparentid, 'arrchildid' => $arrchildid, 'child' => $child));
                 }
-
+                var_dump("123");die();
                 $parentdir = $this->get_categorydir($catid); //父栏目路径
                 $catname = iconv('utf-8', 'gbk', $cat['catname']); //获取栏目名称
                 $letters = gbk_to_pinyin($catname);
