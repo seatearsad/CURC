@@ -310,7 +310,7 @@ class Category extends Adminbase
                 $child = is_numeric($arrchildid) ? 0 : 1; //是否有子栏目
                 //检查所有父id 子栏目id 等相关数据是否正确，不正确更新
                 if ($categorys[$catid]['arrparentid'] != $arrparentid || $categorys[$catid]['arrchildid'] != $arrchildid || $categorys[$catid]['child'] != $child) {
-                    Db::name("Category")->where(array('catid' => $catid))->update(array('arrparentid' => $arrparentid, 'arrchildid' => $arrchildid, 'child' => $child));
+                    Db::name("category")->where(array('catid' => $catid))->update(array('arrparentid' => $arrparentid, 'arrchildid' => $arrchildid, 'child' => $child));
                 }
 
                 $parentdir = $this->get_categorydir($catid); //父栏目路径
@@ -338,17 +338,16 @@ class Category extends Adminbase
                     $save['listorder'] = $listorder;
                 }
                 if (count($save) > 0) {
-                    Db::name("Category")->where(array('catid' => $catid))->update($save);
+                    Db::name("category")->where(array('catid' => $catid))->update($save);
                 }
                 getCategory($catid, '', true);
             }
 
         }
-        var_dump($data);die();
         //删除父栏目是不存在的栏目
         foreach ($this->categorys as $catid => $cat) {
             if ($cat['parentid'] != 0 && !isset($this->categorys[$cat['parentid']])) {
-                Db::name("Category")->delete(array('catid' => $catid));
+                Db::name("category")->delete(array('catid' => $catid));
             }
         }
         return true;
