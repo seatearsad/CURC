@@ -283,7 +283,6 @@ class Category extends Adminbase
     public function public_cache()
     {
         $this->repair();
-        var_dump("cache");die();
         $this->cache();
         $this->success("更新缓存成功！", Url::build("category/index"));
     }
@@ -295,6 +294,7 @@ class Category extends Adminbase
     {
         $this->categorys = $categorys = array();
         $data = Db::name('category')->where(array('module' => 'content'))->order('listorder ASC, catid ASC')->select();
+        var_dump($data);die();
         foreach ($data as $v) {
             $categorys[$v['catid']] = $v;
         }
