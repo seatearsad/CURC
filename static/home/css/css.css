@@ -31,7 +31,7 @@ body{
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: center bottom;
     top:10px;
     left: 6%;
 }
