@@ -294,7 +294,6 @@ class Category extends Adminbase
     {
         $this->categorys = $categorys = array();
         $data = Db::name('category')->where(array('module' => 'content'))->order('listorder ASC, catid ASC')->select();
-        var_dump($data);die();
         foreach ($data as $v) {
             $categorys[$v['catid']] = $v;
         }
@@ -345,6 +344,7 @@ class Category extends Adminbase
             }
 
         }
+        var_dump($data);die();
         //删除父栏目是不存在的栏目
         foreach ($this->categorys as $catid => $cat) {
             if ($cat['parentid'] != 0 && !isset($this->categorys[$cat['parentid']])) {
