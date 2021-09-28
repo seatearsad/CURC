@@ -29,7 +29,9 @@
             {volist name="data" id="vo"}
             {yzn:get table="links" termsid="$vo['id']" cache="3600" order="listorder ASC" return="data_link"}
             {volist name="data_link" id="link"}
-            <img src="{$link['image']}" style="width: 80%;margin-left: 10%; margin-bottom: 25px" />
+            <a href="{$link['url']}">
+                <img src="{$link['image']}" style="width: 80%;margin-left: 10%; margin-bottom: 25px" />
+            </a>
             {/volist}
             {/yzn:get}
             {/volist}
