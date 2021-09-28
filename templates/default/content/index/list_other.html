@@ -4,7 +4,7 @@
     {include file="public:header_new" /}
     <div class="main_show" style="overflow: auto;padding: 10px 5%;margin-bottom: 20px">
         <ul style="list-style: none;">
-        {yzn:content action="lists" catid="$catid" num="1" order="listorder ASC" return="data" page="$page"}
+        {yzn:content action="lists" catid="$catid" num="6" order="listorder ASC" return="data" page="$page"}
         {volist name="data" id="vo"}
         <li class="news-other-li">
             <div class="news-img" style="width: 100%;height:200px;" data-img="{$vo['thumb']}"><a href="{$vo['url']}"></a></div>
