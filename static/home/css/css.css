@@ -370,7 +370,7 @@ body{
     overflow: hidden;
     width: 70%;
 }
-.main_show span{
+.main_show .span_content{
     display: inline-block;
     font-size: 14px;
     line-height: 1.6;

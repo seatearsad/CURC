@@ -14,8 +14,8 @@
         {eq name="list.num" value="0"}
         <div class="show_tag active">
             <h1>{$list['title']}</h1>
-            <div>
-                <span>
+            <div style="position: relative;">
+                <span class="span_content">
                     {$list['content']}
                 </span>
                 <div id="scroll_bar">
@@ -29,7 +29,7 @@
             {volist name="data" id="vo"}
             {yzn:get table="links" termsid="$vo['id']" cache="3600" order="listorder ASC" return="data_link"}
             {volist name="data_link" id="link"}
-            <img src="{$link['image']}" style="width: 90%;margin-left: 10%;" />
+            <img src="{$link['image']}" style="width: 90%;margin-left: 10%; margin-bottom: 10px" />
             {/volist}
             {/yzn:get}
             {/volist}
