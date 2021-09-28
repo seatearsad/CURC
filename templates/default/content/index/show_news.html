@@ -16,6 +16,16 @@
             </div>
             <dd class="content_down">&nbsp;</dd>
         </div>
+        <div class="link_div">
+            <ul>
+            {yzn:content action="lists" catid="$catid" num="6" order="listorder DESC" return="data" page="$page"}
+            {volist name="data" id="vo"}
+            <li style="margin-left: 10%;list-style: disclosure-closed;"><a href="{$vo['url']}" style="color: white;">{$vo['title']}</a></li>
+            {/volist}
+            {/yzn:content}
+            </ul>
+            <div style="float: right;font-weight: bold;"><a href="/home/index/lists/catid/{$catid}" style="color: white;"> More </div>
+        </div>
     </div>
 </div>
 <div class="copy_div" style="bottom: 30px;left: 5%">
