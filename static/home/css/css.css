@@ -372,7 +372,7 @@ body{
 }
 .main_show .span_content{
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     width: 100%;
     overflow-y: scroll;
