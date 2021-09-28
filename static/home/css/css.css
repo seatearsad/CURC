@@ -512,7 +512,7 @@ body{
 .link_div{
     position: absolute;
     left: 66%;
-    top: 0;
+    top: 80px;
     right: 10%;
     width: 24%;
     height: 100px;
