@@ -40,15 +40,18 @@
         <ul id="link_tag">
             {yzn:get table="terms" cache="3600" order="id ASC" return="data"}
             {volist name="data" id="vo"}
+            {if condition="!$vo['setting']"}
             <li {if condition="$i eq 1"}class="select_li"{/if}>
                 {$vo['name']}
             </li>
+            {/if}
             {/volist}
             {/yzn:get}
         </ul>
         <div class="bottom_show">
             {yzn:get table="terms" cache="3600" order="id ASC" return="data"}
             {volist name="data" id="vo"}
+            {if condition="!$vo['setting']"}
             <ul class="bottom_list">
                 {yzn:get table="links" termsid="$vo['id']" cache="3600" order="listorder ASC" return="data_link"}
                 {volist name="data_link" id="link"}
@@ -58,6 +61,7 @@
                 {/volist}
                 {/yzn:get}
             </ul>
+            {/if}
             {/volist}
             {/yzn:get}
         </div>

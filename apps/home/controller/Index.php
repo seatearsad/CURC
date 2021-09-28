@@ -58,16 +58,40 @@ class Index extends Homebase
             $tpar = explode(".", $template, 2);
             //去除完后缀的模板
             $template = $tpar[0];
-            $modelid = $category['modelid'];
-            $table_name = get_table_name($modelid);
-            $doc_list = Db::name($table_name)->where(array('catid' => $catid, 'status' => 99))->select();
-            $i = 0;
-            foreach ($doc_list as $k=>&$v){
-                $doc = Db::name($table_name . '_data')->where(array('id' => $v['id']))->find();
-                $v['content'] = $doc['content'];
-                $v['num'] = $i;
-                $i++;
+            $category_list = Db::name("category")->where(array('parentid'=>$catid))->select();
+            $doc_list = array();
+            if(count($category_list) > 0) {
+                $i = 0;
+                foreach ($category_list as $v) {
+                    if ($v['type'] == 1) {
+                        $data = array();
+                        $doc = Db::name("page")->where(array('catid' => $v['catid']))->find();
+                        if ($doc) {
+                            $data['title'] = $doc['title'];
+                            $data['content'] = $doc['content'];
+                        } else {
+                            $data['title'] = $v['catname'];
+                            $data['content'] = "";
+                        }
+                        $data['num'] = $i;
+                        $doc_list[] = $data;
+                    }
+                    $i++;
+                }
+            }else{
+                $modelid = $category['modelid'];
+                $table_name = get_table_name($modelid);
+                $doc_list = Db::name($table_name)->where(array('catid' => $catid, 'status' => 99))->select();
+                $i = 0;
+                foreach ($doc_list as $k=>&$v){
+                    $doc = Db::name($table_name . '_data')->where(array('id' => $v['id']))->find();
+                    $v['content'] = $doc['content'];
+                    $v['num'] = $i;
+                    $i++;
+                }
+                $this->assign("doc_list",$doc_list);
             }
+
             $this->assign("doc_list",$doc_list);
             unset($tpar);
             //单页

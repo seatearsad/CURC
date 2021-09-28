@@ -540,7 +540,8 @@ function page($total, $size = 0, $number = 0, $config = array())
         //分页模板
         'tpl' => '',
         //分页具体可控制配置参数默认配置
-        'tplconfig' => array('listlong' => 6, 'listsidelong' => 2, "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""),
+        //'tplconfig' => array('listlong' => 6, 'listsidelong' => 2, "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""),
+        'tplconfig' => array('listlong' => 3, 'listsidelong' => 1, "first" => "首页", "last" => "尾页", "prev" => "<", "next" => ">", "list" => "*", "disabledclass" => "..."),
     );
     //分页具体可控制配置参数
     $cfg = array(

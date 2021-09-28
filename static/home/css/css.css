@@ -227,7 +227,7 @@ body{
 }
 .main_back{
     width: 50%;
-    background-image: url("../images/main_second.png");
+    /**background-image: url("../images/main_second.png");**/
     position: absolute;
     height: 100%;
     background-size: 100% 100%;
@@ -391,26 +391,37 @@ body{
     opacity: 1;
 }
 .second_page{
-    background-image: url("../images/second_bottom.png");
+    background-image: url("../images/second_top.png");
     background-repeat: no-repeat;
-    background-position: bottom -20px left;
+    background-size: 90% auto;
+    background-position: top -50px right;
 }
-.news-li{
+.news-li,.news-other-li{
     width: 48%;
     float:left;
-    background-image: url("../images/news_other.png");
+    background-image: url("../images/box_bg.png");
     background-size: 100% 100%;
+    border:10px double white;
+    border-radius: 12px;
+    border-image: url("../images/news_other.png") 80 round;
     padding: 10px 20px;
     margin-bottom: 10px;
     margin-left: 20px;
     height: 150px;
 }
+.news-other-li{
+    width: 30%;
+    height: 380px;
+}
 .first_news{
     height: 470px;
-    background-image: url("../images/news_first.png");
+    /*background-image: url("../images/news_first.png");*/
 }
 .news-img{
     margin: 10px 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
 }
 .news-pp a{
     color: white;
@@ -447,4 +458,62 @@ body{
     -webkit-transform:rotate(90deg);
     -moz-transform:rotate(90deg);
     transform: rotate(90deg);
+    display: none;
+}
+#scroll_bar{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #9ab3d1;
+    display: none;
+}
+#scroll_bar_line{
+    width: 10px;
+    height: 30px;
+    background-color: #1f1f4b;
+    margin-top: 0px;
+}
+#pages a,#pages .current,#pages .page_more{
+    line-height: 30px;
+    width: 40px;
+    text-align: center;
+    background-color: #0071BC;
+    color: white;
+    display: inline-block;
+    border: 1px solid white;
+    border-left: 0px;
+}
+#pages .current{
+    background-color: white;
+    color: #333333;
+}
+
+#pages .page_pre,#pages .page_next{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    vertical-align: center;
+    border: 0px;
+}
+.page_one{
+    border-bottom-left-radius: 16px;
+    border-top-left-radius:16px;
+    width: 45px !important;
+}
+.page_end{
+    border-bottom-right-radius: 16px;
+    border-top-right-radius:16px;
+    width: 45px !important;
+}
+.link_div{
+    position: absolute;
+    left: 66%;
+    top: 0;
+    right: 10%;
+    width: 24%;
+    height: 100px;
 }
