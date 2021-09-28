@@ -403,7 +403,7 @@ body{
     background-size: 100% 100%;
     border:10px double white;
     border-radius: 12px;
-    border-image: url("../images/news_other.png") 80 round;
+    border-image: url("../images/news_other.png") 80 fill;
     padding: 10px 20px;
     margin-bottom: 10px;
     margin-left: 20px;
