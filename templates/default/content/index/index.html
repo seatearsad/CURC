@@ -56,7 +56,9 @@
                 {yzn:get table="links" termsid="$vo['id']" cache="3600" order="listorder ASC" return="data_link"}
                 {volist name="data_link" id="link"}
                 <a href="{$link['url']}" target="_blank">
-                <li style='background-image: url("{$link['image']}");'></li>
+                <li>
+                    <img src="{$link['image']}" height="80%" />
+                </li>
                 </a>
                 {/volist}
                 {/yzn:get}
