@@ -55,8 +55,8 @@
             <ul class="bottom_list">
                 {yzn:get table="links" termsid="$vo['id']" cache="3600" order="listorder ASC" return="data_link"}
                 {volist name="data_link" id="link"}
-                <li>
-                    <a href="{$link['url']}" target="_blank">{$link['name']}</a>
+                <li style='background-image: url("{$link['image']}");'>
+
                 </li>
                 {/volist}
                 {/yzn:get}

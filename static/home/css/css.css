@@ -319,14 +319,14 @@ body{
 .bottom_show ul li{
     width: 110px;
     text-align: center;
-    height: 70px;
+    height: 80px;
     padding: 40px 0 0 0;
     border: 0;
     border-radius: 0;
     color: grey;
     background-position:top 2px center;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: auto 80%;
     background-image: url("../images/link/logo.png");
 }
 
