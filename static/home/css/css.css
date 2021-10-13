@@ -324,9 +324,9 @@ body{
     border: 0;
     border-radius: 0;
     color: grey;
-    background-position:top 2px center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 80%;
+    background-size: 100% auto;
     background-image: url("../images/link/logo.png");
 }
 
